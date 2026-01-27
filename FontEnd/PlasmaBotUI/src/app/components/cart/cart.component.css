@@ -1,0 +1,148 @@
+.cart-container {
+  padding: 0;
+  max-width: 900px;
+}
+
+.cart-container h1 {
+  margin-bottom: 24px;
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.empty-cart mat-card {
+  text-align: center;
+  padding: 60px 40px;
+  border-radius: 16px !important;
+}
+
+.empty-icon {
+  font-size: 100px;
+  width: 100px;
+  height: 100px;
+  color: #ddd;
+  margin-bottom: 24px;
+}
+
+.empty-cart p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.cart-item-card {
+  margin-bottom: 16px;
+  border-radius: 12px !important;
+  transition: box-shadow 0.2s ease;
+}
+
+.cart-item-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.item-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.item-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.item-info p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.item-price {
+  color: #888;
+  margin-top: 8px;
+}
+
+.item-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.quantity-field {
+  width: 100px;
+}
+
+.item-total {
+  min-width: 130px;
+  text-align: right;
+  font-size: 18px;
+  color: #3f51b5;
+}
+
+.cart-summary {
+  margin-top: 24px;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.cart-summary .mat-card-content {
+  padding: 24px 16px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+  padding-top: 16px;
+}
+
+.summary-row span {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.total-amount {
+  font-size: 32px;
+  font-weight: 700;
+  color: white !important;
+}
+
+.cart-summary .mat-card-actions {
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 12px 12px;
+}
+
+.checkout-btn {
+  width: 100%;
+  height: 56px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: white !important;
+  color: #3f51b5 !important;
+}
+
+.cart-summary .mat-card-actions button:not(.checkout-btn) {
+  color: rgba(255, 255, 255, 0.9);
+}
+

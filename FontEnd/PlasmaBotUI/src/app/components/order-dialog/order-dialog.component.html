@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Place Order</h2>
+<mat-dialog-content>
+  <form [formGroup]="orderForm">
+    <p><strong>Total Amount: ${{ data.totalAmount.toFixed(2) }}</strong></p>
+    <p>Items: {{ data.items.length }}</p>
+    
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>User ID</mat-label>
+      <input matInput formControlName="userId" type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Delivery Address</mat-label>
+      <textarea matInput formControlName="address" rows="3"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Phone Number</mat-label>
+      <input matInput formControlName="phone">
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!orderForm.valid">
+    Place Order
+  </button>
+</mat-dialog-actions>
+

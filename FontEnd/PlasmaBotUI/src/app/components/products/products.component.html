@@ -1,0 +1,86 @@
+<div class="products-container">
+  <h1>Products</h1>
+
+  <!-- Filters -->
+  <mat-card class="filters-card">
+    <mat-card-content>
+      <div class="filters">
+        <mat-form-field appearance="outline">
+          <mat-label>Search by name</mat-label>
+          <input matInput [(ngModel)]="searchName" (keyup.enter)="onSearch()">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Min Price</mat-label>
+          <input matInput type="number" [(ngModel)]="minPrice" (change)="onFilterChange()">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Max Price</mat-label>
+          <input matInput type="number" [(ngModel)]="maxPrice" (change)="onFilterChange()">
+        </mat-form-field>
+
+        <mat-checkbox [(ngModel)]="availableOnly" (change)="onFilterChange()">
+          Available only
+        </mat-checkbox>
+
+        <button mat-raised-button color="primary" (click)="onSearch()">
+          <mat-icon>search</mat-icon>
+          Search
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Loading Spinner -->
+  <div class="loading-container" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="products-grid" *ngIf="!loading">
+    <mat-card *ngFor="let product of products" class="product-card">
+      <mat-card-header>
+        <mat-card-title>{{ product.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ product.description || 'No description available' }}</p>
+        <p class="price">${{ product.price }}</p>
+        <mat-chip-list>
+          <mat-chip [color]="product.available ? 'primary' : 'warn'">
+            {{ product.available ? 'Available' : 'Out of Stock' }}
+          </mat-chip>
+        </mat-chip-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="viewDetails(product)">
+          <mat-icon>info</mat-icon>
+          Details
+        </button>
+        <button mat-raised-button color="accent" (click)="addToCart(product)" [disabled]="!product.available">
+          <mat-icon>add_shopping_cart</mat-icon>
+          Add to Cart
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- Pagination -->
+  <mat-paginator
+    *ngIf="!loading && totalElements > 0"
+    [length]="totalElements"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    [pageSizeOptions]="[6, 12, 24, 48]"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+
+  <!-- Empty State -->
+  <mat-card *ngIf="!loading && products.length === 0">
+    <mat-card-content>
+      <p>No products found. Try adjusting your filters.</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+

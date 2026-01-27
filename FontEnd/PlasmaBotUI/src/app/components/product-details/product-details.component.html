@@ -1,0 +1,48 @@
+<div class="product-details-container" *ngIf="product && !loading">
+  <button mat-button (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+    Back to Products
+  </button>
+
+  <mat-card class="product-details-card">
+    <mat-card-header>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="product-info">
+        <div class="product-description">
+          <p>{{ product.description || 'No description available' }}</p>
+          <p class="price">${{ product.price }}</p>
+          <mat-chip-list>
+            <mat-chip [color]="product.available ? 'primary' : 'warn'">
+              {{ product.available ? 'Available' : 'Out of Stock' }}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+        
+        <div class="add-to-cart-section" *ngIf="product.available">
+          <mat-form-field appearance="outline">
+            <mat-label>Quantity</mat-label>
+            <input matInput type="number" [(ngModel)]="quantity" min="1">
+            <button mat-icon-button matSuffix (click)="increaseQuantity()">
+              <mat-icon>add</mat-icon>
+            </button>
+            <button mat-icon-button matSuffix (click)="decreaseQuantity()">
+              <mat-icon>remove</mat-icon>
+            </button>
+          </mat-form-field>
+          
+          <button mat-raised-button color="accent" (click)="addToCart()" class="add-to-cart-btn">
+            <mat-icon>add_shopping_cart</mat-icon>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="loading-container" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div>
+
