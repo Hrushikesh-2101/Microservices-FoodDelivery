@@ -63,7 +63,7 @@ ng serve
 
 3. Open your browser and navigate to:
 ```
-http://localhost:4200
+http://localhost:4201
 ```
 
 ## Project Structure
@@ -155,7 +155,7 @@ ng lint
 
 ## Troubleshooting
 
-1. **CORS Issues**: Make sure your backend services have CORS enabled to allow requests from `http://localhost:4200`
+1. **CORS Issues**: Make sure your backend services have CORS enabled to allow requests from `http://localhost:4201`
 
 2. **API Connection Errors**: Verify that all backend services are running and accessible
 

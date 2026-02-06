@@ -1,8 +1,14 @@
 <div class="product-details-container" *ngIf="product && !loading">
-  <button mat-button (click)="goBack()">
-    <mat-icon>arrow_back</mat-icon>
-    Back to Products
-  </button>
+  <div class="details-actions">
+    <button mat-button (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+      Back to Products
+    </button>
+    <button mat-raised-button color="primary" [routerLink]="['/products/edit', product.id]">
+      <mat-icon>edit</mat-icon>
+      Edit Product
+    </button>
+  </div>
 
   <mat-card class="product-details-card">
     <mat-card-header>

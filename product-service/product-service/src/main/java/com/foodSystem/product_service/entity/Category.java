@@ -1,21 +1,29 @@
 package com.foodSystem.product_service.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
 @Table(name = "categories")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotBlank(message = "Name is mandatory")
     private String name;
 
     @ManyToMany(mappedBy = "categories")
+    @JsonBackReference
     private List<Product> products;
 
     // Default constructor
@@ -25,6 +33,9 @@ public class Category {
     public Category(Long id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Category(String vegetarian) {
     }
 
     // Getters and Setters

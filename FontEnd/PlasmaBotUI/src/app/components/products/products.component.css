@@ -2,8 +2,22 @@
   padding: 0;
 }
 
-.products-container h1 {
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
   margin-bottom: 24px;
+}
+
+.products-header h1 {
+  margin: 0;
+}
+
+.products-header button mat-icon {
+  margin-right: 6px;
+  vertical-align: middle;
 }
 
 .filters-card {

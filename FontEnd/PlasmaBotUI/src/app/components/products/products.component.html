@@ -1,5 +1,11 @@
 <div class="products-container">
-  <h1>Products</h1>
+  <div class="products-header">
+    <h1>Products</h1>
+    <button mat-raised-button color="primary" routerLink="/products/add">
+      <mat-icon>add</mat-icon>
+      Add Product
+    </button>
+  </div>
 
   <!-- Filters -->
   <mat-card class="filters-card">
@@ -57,6 +63,10 @@
         <button mat-button color="primary" (click)="viewDetails(product)">
           <mat-icon>info</mat-icon>
           Details
+        </button>
+        <button mat-button [routerLink]="['/products/edit', product.id]">
+          <mat-icon>edit</mat-icon>
+          Edit
         </button>
         <button mat-raised-button color="accent" (click)="addToCart(product)" [disabled]="!product.available">
           <mat-icon>add_shopping_cart</mat-icon>

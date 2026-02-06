@@ -80,7 +80,7 @@ public class AuthController {
     public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest request) {
         Optional<User> userOptional = userRepository.findByEmail(request.getEmail());
 
-        if (userOptional.isEmpty()) {
+        if (!userOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body(new AuthResponse("Invalid email or password"));
         }
@@ -121,7 +121,7 @@ public class AuthController {
             String email = jwtService.extractUsername(token);
             Optional<User> userOptional = userRepository.findByEmail(email);
 
-            if (userOptional.isEmpty()) {
+            if (!userOptional.isPresent()) {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                         .body(new AuthResponse("User not found"));
             }

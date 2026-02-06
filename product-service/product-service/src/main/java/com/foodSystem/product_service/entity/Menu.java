@@ -9,7 +9,7 @@ import java.util.List;
 public class Menu {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name; // e.g., "Pizza Menu", "Burger Menu"

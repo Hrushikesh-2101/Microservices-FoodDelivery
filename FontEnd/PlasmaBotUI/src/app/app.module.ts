@@ -31,6 +31,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
@@ -44,6 +45,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { OrderDialogComponent } from './components/order-dialog/order-dialog.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 // Services
 import { ProductService } from './services/product.service';
@@ -67,7 +70,9 @@ import { AuthGuard } from './guards/auth.guard';
     DashboardComponent,
     OrderDialogComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
@@ -99,6 +104,7 @@ import { AuthGuard } from './guards/auth.guard';
     MatStepperModule,
     MatCheckboxModule,
     MatSliderModule,
+    MatSlideToggleModule,
     MatTooltipModule,
     MatMenuModule,
     MatDividerModule
