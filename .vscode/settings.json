@@ -1,0 +1,27 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.project.sourcePaths": [
+        "user-service/user-service/src/main/java",
+        "product-service/product-service/src/main/java",
+        "order-service/order-service/src/main/java"
+    ],
+    "java.project.outputPath": "target/classes",
+    "java.project.referencedLibraries": [
+        "**/*.jar"
+    ],
+    "files.exclude": {
+        "**/target": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "java.configuration.runtimes": [],
+    "spring-boot.ls.java.home": "",
+    "java.import.maven.enabled": true,
+    "maven.executable.path": "mvn",
+    "java.debug.settings.enableRunDebugCodeLens": true,
+    "java.debug.settings.hotCodeReplace": "auto"
+}
+

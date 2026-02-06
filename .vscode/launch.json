@@ -1,0 +1,84 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run User Service",
+            "request": "launch",
+            "mainClass": "com.foodSystem.user_service.UserServiceApplication",
+            "projectName": "user-service",
+            "args": "",
+            "vmArgs": "-Dspring.profiles.active=default",
+            "cwd": "${workspaceFolder}/user-service/user-service",
+            "console": "internalConsole",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "java",
+            "name": "Run Product Service",
+            "request": "launch",
+            "mainClass": "com.foodSystem.product_service.ProductServiceApplication",
+            "projectName": "product-service",
+            "args": "",
+            "vmArgs": "-Dspring.profiles.active=default",
+            "cwd": "${workspaceFolder}/product-service/product-service",
+            "console": "internalConsole",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "java",
+            "name": "Run Order Service",
+            "request": "launch",
+            "mainClass": "com.foodSystem.order_service.OrderServiceApplication",
+            "projectName": "order-service",
+            "args": "",
+            "vmArgs": "-Dspring.profiles.active=default",
+            "cwd": "${workspaceFolder}/order-service/order-service",
+            "console": "internalConsole",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "java",
+            "name": "Debug User Service",
+            "request": "launch",
+            "mainClass": "com.foodSystem.user_service.UserServiceApplication",
+            "projectName": "user-service",
+            "args": "",
+            "vmArgs": "-Dspring.profiles.active=default",
+            "cwd": "${workspaceFolder}/user-service/user-service"
+        },
+        {
+            "type": "java",
+            "name": "Debug Product Service",
+            "request": "launch",
+            "mainClass": "com.foodSystem.product_service.ProductServiceApplication",
+            "projectName": "product-service",
+            "args": "",
+            "vmArgs": "-Dspring.profiles.active=default",
+            "cwd": "${workspaceFolder}/product-service/product-service"
+        },
+        {
+            "type": "java",
+            "name": "Debug Order Service",
+            "request": "launch",
+            "mainClass": "com.foodSystem.order_service.OrderServiceApplication",
+            "projectName": "order-service",
+            "args": "",
+            "vmArgs": "-Dspring.profiles.active=default",
+            "cwd": "${workspaceFolder}/order-service/order-service"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Run All Services",
+            "configurations": [
+                "Run User Service",
+                "Run Product Service",
+                "Run Order Service"
+            ],
+            "stopAll": true,
+            "preLaunchTask": "Build All Services"
+        }
+    ]
+}
+
