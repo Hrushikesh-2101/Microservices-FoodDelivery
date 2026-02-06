@@ -30,23 +30,17 @@ export class AppComponent implements OnInit, OnDestroy {
       map(() => this.cartService.getCartItemCount())
     );
 
-    // Subscribe to current user changes
+    // TODO: Auth removed temporarily - always show UI
+    // Set authenticated to true so UI is always visible
+    this.isAuthenticated = true;
+
+    // Subscribe to current user changes (for display purposes)
     const userSub = this.authService.currentUser$.subscribe(user => {
       this.currentUser = user;
-      this.isAuthenticated = this.authService.isAuthenticated();
     });
     this.subscriptions.push(userSub);
 
-    // Check auth status on route changes
-    const routerSub = this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      this.isAuthenticated = this.authService.isAuthenticated();
-    });
-    this.subscriptions.push(routerSub);
-
-    // Initial auth check
-    this.isAuthenticated = this.authService.isAuthenticated();
+    // Initial user check
     this.currentUser = this.authService.getCurrentUser();
   }
 

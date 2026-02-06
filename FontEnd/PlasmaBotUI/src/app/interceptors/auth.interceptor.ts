@@ -19,12 +19,12 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const token = this.authService.getToken();
 
-    // Don't add token to auth endpoints
-    if (request.url.includes('/api/auth/')) {
-      return next.handle(request);
-    }
-
-    if (token) {
+    // Don't add token to login/register endpoints (they don't require authentication)
+    // But validate endpoint needs the token
+    const isAuthEndpoint = request.url.includes('/api/auth/login') || 
+                          request.url.includes('/api/auth/register');
+    
+    if (!isAuthEndpoint && token) {
       request = request.clone({
         setHeaders: {
           Authorization: `Bearer ${token}`
@@ -34,10 +34,11 @@ export class AuthInterceptor implements HttpInterceptor {
 
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
-        if (error.status === 401) {
-          this.authService.logout();
-          this.router.navigate(['/login']);
-        }
+        // TODO: Auth removed temporarily - don't redirect on 401
+        // if (error.status === 401) {
+        //   this.authService.logout();
+        //   this.router.navigate(['/login']);
+        // }
         return throwError(() => error);
       })
     );

@@ -1,0 +1,51 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Eureka Server (Maven)" type="MavenRunConfiguration" factoryName="Maven">
+    <MavenSettings>
+      <option name="myGeneralSettings">
+        <MavenGeneralSettings>
+          <option name="alwaysUpdateSnapshots" value="false" />
+          <option name="failureBehavior" value="1" />
+          <option name="nonRecursive" value="false" />
+          <option name="outputLevel" value="DEFAULT" />
+          <option name="pluginUpdatePolicy" value="DEFAULT" />
+          <option name="threadCount" value="1" />
+          <option name="useMavenConfig" value="true" />
+          <option name="workOffline" value="false" />
+        </MavenGeneralSettings>
+      </option>
+      <option name="myRunnerSettings">
+        <MavenRunnerSettings>
+          <option name="delegateBuildToMaven" value="false" />
+          <option name="environmentProperties">
+            <map />
+          </option>
+          <option name="jreName" value="1.8" />
+          <option name="mavenProperties">
+            <map />
+          </option>
+          <option name="passParentEnv" value="true" />
+          <option name="runMavenInBackground" value="true" />
+        </MavenRunnerSettings>
+      </option>
+      <option name="myRunnerParameters">
+        <MavenRunnerParameters>
+          <option name="profiles">
+            <set />
+          </option>
+          <option name="goals">
+            <list>
+              <option value="spring-boot:run" />
+            </list>
+          </option>
+          <option name="pomFileName" value="pom.xml" />
+          <option name="profilesList">
+            <list />
+          </option>
+          <option name="resolveToWorkspace" value="false" />
+          <option name="workingDirectory" value="$PROJECT_DIR$/eureka-server/eureka-server" />
+        </MavenRunnerParameters>
+      </option>
+    </MavenSettings>
+    <method v="2" />
+  </configuration>
+</component>

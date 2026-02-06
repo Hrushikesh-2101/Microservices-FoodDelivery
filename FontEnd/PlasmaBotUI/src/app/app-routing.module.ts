@@ -9,19 +9,20 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { CartComponent } from './components/cart/cart.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { AuthGuard } from './guards/auth.guard';
+// TODO: Auth removed temporarily - AuthGuard commented out
+// import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
-  { path: 'products/add', component: AddProductComponent, canActivate: [AuthGuard] },
-  { path: 'products/edit/:id', component: EditProductComponent, canActivate: [AuthGuard] },
-  { path: 'products/:id', component: ProductDetailsComponent, canActivate: [AuthGuard] },
-  { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
-  { path: 'cart', component: CartComponent, canActivate: [AuthGuard] }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'products', component: ProductsComponent },
+  { path: 'products/add', component: AddProductComponent },
+  { path: 'products/edit/:id', component: EditProductComponent },
+  { path: 'products/:id', component: ProductDetailsComponent },
+  { path: 'orders', component: OrdersComponent },
+  { path: 'cart', component: CartComponent }
 ];
 
 @NgModule({

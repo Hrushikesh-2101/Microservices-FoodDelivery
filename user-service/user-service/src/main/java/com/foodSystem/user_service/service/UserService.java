@@ -52,4 +52,8 @@ public class UserService {
         }
         userRepository.deleteById(id);
     }
+
+    public Optional<User> getUserForLogin(String email, String password) {
+        return Optional.ofNullable(userRepository.findByEmailAndPassword(email,password).orElseThrow(() -> new UserNotFoundException("Invalid email or password")));
+    }
 }

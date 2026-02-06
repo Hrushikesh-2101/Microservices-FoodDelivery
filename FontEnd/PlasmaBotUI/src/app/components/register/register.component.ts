@@ -23,11 +23,11 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Redirect if already logged in
-    if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/dashboard']);
-      return;
-    }
+    // TODO: Auth removed temporarily
+    // if (this.authService.isAuthenticated()) {
+    //   this.router.navigate(['/dashboard']);
+    //   return;
+    // }
 
     this.registerForm = this.fb.group({
       name: ['', [Validators.required, Validators.maxLength(100)]],

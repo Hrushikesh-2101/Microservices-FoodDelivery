@@ -57,6 +57,20 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    @Operation(summary = "Get user for login", description = "Retrieves a user by email and password for login")
+    @ApiResponses(value={
+            @ApiResponse(responseCode="200", description="Login successful"),
+            @ApiResponse(responseCode="401", description="Invalid credentials")
+    })
+    @PostMapping("/login")
+    public Optional<User> getUserForLogin(
+            @Parameter(description = "User email",required = true)@RequestParam String email,
+            @Parameter(description = "User password", required = true) @RequestParam String password
+    ){
+        return userService.getUserForLogin(email,password);
+    }
+
+
     @Operation(summary = "Create a new user", description = "Creates a new user")
     @PostMapping
     public User createUser(@RequestBody User user) {

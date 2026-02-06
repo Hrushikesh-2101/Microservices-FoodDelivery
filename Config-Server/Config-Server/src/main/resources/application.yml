@@ -1,0 +1,16 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: CONFIG-SERVER
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Hrushikesh-2101/Microservices-FoodDelivery.git
+          search-paths: config-repo
+          clone-on-start: true
+          default-label: main
+
