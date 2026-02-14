@@ -1,0 +1,36 @@
+FULL NAME
+[City, State] | [Phone] | [Email] | [LinkedIn] | GitHub: github.com/Hrushikesh-2101
+
+FULL STACK JAVA DEVELOPER
+
+SUMMARY
+Full Stack Java developer delivering Spring Boot microservices and Angular applications with SQL persistence and REST APIs.
+Built service discovery, centralized configuration, and API gateway patterns using Spring Cloud components.
+Created OpenAPI/Swagger documentation and automated tests to validate core CRUD and search workflows.
+
+TECHNICAL SKILLS
+Languages: Java, TypeScript, SQL
+Frameworks: Spring Boot, Spring Data JPA, Spring Cloud (Eureka, Config Server, Gateway), Angular, RxJS
+Databases: MySQL
+API/Tools: REST, OpenAPI/Swagger, Maven, Git, JUnit 5, Mockito, MockMvc
+
+PROJECTS
+Food Delivery Platform Microservices | Java 8, Spring Boot 2.7, Spring Cloud, MySQL, JPA, OpenAPI/Swagger
+- Designed 3 Spring Boot microservices for users, products, and orders with independent MySQL schemas supporting CRUD workflows.
+- Implemented 23 REST endpoints with pagination, sorting, and filtering using Spring Data JPA Specifications across services.
+- Modeled Product, Category, and Menu relationships with many-to-many join table for flexible menu taxonomy in MySQL.
+- Validated request payloads with Bean Validation and returned correct HTTP status codes for conflicts and not-found scenarios.
+- Documented APIs using springdoc OpenAPI and Swagger UI, accelerating endpoint discovery and manual testing for stakeholders.
+- Centralized service configuration via Spring Cloud Config Server with Git-backed properties and environment-specific ports per service.
+- Enabled service discovery with Netflix Eureka and routed traffic through Spring Cloud Gateway for unified entrypoint.
+
+PlasmaBotUI Front End | Angular 12, TypeScript, Angular Material, RxJS
+- Built Angular 12 UI with Material components, RxJS state streams, and HttpClient integration to backend services.
+- Implemented authentication service with local storage token handling, login workflow, and route navigation controls in Angular.
+- Upgraded Angular codebase via documented step-by-step migration guides, reducing build breaks during version transitions to v12.
+
+TESTING
+- Created MockMvc tests with JUnit 5 and Mockito, validating CRUD, pagination, and filter flows across services consistently.
+
+EDUCATION
+[Degree], [University], [Location] | [Graduation Year]
